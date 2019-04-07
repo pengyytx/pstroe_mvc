@@ -20,9 +20,9 @@ public class SortService {
         return sortRepository.findOne(id);
     }
 
-    public void addSort(String name,String identity,Double salary){
-        Sort sort = new Sort(name,identity,salary);
-        sortRepository.save(sort);
+    public void addSort(String name,String manager){
+       Sort sort = new Sort(name,manager);
+       sortRepository.save(sort);
     }
 
     public void deleteSort(Integer id){

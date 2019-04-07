@@ -20,8 +20,8 @@ public class EmployeeService {
         return employeeRepository.findOne(id);
     }
 
-    public void addEmployee(String name,String manager){
-        Employee employee = new Employee(name,manager);
+    public void addEmployee(String name,String identity,Double salary){
+        Employee employee = new Employee(name,identity,salary);
         employeeRepository.save(employee);
     }
 

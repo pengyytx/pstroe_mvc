@@ -12,16 +12,19 @@ public class Employee {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "manager")
-    private String manager;
+    @Column(name = "identity")
+    private String identity;
+
+    @Column(name = "salary")
+    private Double salary;
 
     public Employee() {
-
     }
 
-    public Employee(String name, String manager) {
+    public Employee(String name, String identity, Double salary) {
         this.name = name;
-        this.manager = manager;
+        this.identity = identity;
+        this.salary = salary;
     }
 
     public Integer getId() {
@@ -40,11 +43,19 @@ public class Employee {
         this.name = name;
     }
 
-    public String getManager() {
-        return manager;
+    public String getIdentity() {
+        return identity;
     }
 
-    public void setManager(String manager) {
-        this.manager = manager;
+    public void setIdentity(String identity) {
+        this.identity = identity;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
     }
 }

@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "sort")
 public class Sort {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -13,20 +14,15 @@ public class Sort {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "identity")
-    private String identity;
-
-    @Column(name = "salary")
-    private Double salary;
+    @Column(name = "manager")
+    private String manager;
 
     public Sort() {
-
     }
 
-    public Sort(String name, String identity, Double salary) {
+    public Sort(String name, String manager) {
         this.name = name;
-        this.identity = identity;
-        this.salary = salary;
+        this.manager = manager;
     }
 
     public Integer getId() {
@@ -45,19 +41,11 @@ public class Sort {
         this.name = name;
     }
 
-    public String getIdentity() {
-        return identity;
+    public String getManager() {
+        return manager;
     }
 
-    public void setIdentity(String identity) {
-        this.identity = identity;
-    }
-
-    public Double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Double salary) {
-        this.salary = salary;
+    public void setManager(String manager) {
+        this.manager = manager;
     }
 }

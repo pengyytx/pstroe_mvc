@@ -8,34 +8,34 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-
+@RequestMapping("/sort")
 public class SortController {
 
     @Autowired
     SortService sortService;
 
-    @RequestMapping("/sort")
+    @RequestMapping("/welcome")
     public String welcome(){
         return "welcome to sort page";
     }
 
-    @GetMapping("/sort/getall")
+    @GetMapping("/getall")
     public List<Sort> getAllSort(){
         return (List<Sort>)sortService.getAllSort();
     }
 
-    @GetMapping("/sort/getbyid/{id}")
+    @GetMapping("/getbyid/{id}")
     public Sort getById(@PathVariable Integer id){
         return sortService.getById(id);
     }
 
-    @PostMapping("/sort/add/{name}/{identity}/{salary}")
-    public String addSort(@PathVariable String name, @PathVariable String identity, @PathVariable Double salary){
-        sortService.addSort(name,identity,salary);
+    @PostMapping("/add/{name}/{manager}")
+    public String addSort(@PathVariable String name, @PathVariable String manager){
+        sortService.addSort(name,manager);
         return "add sort successful!";
     }
 
-    @DeleteMapping("/sort/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public String deleteSort(@PathVariable Integer id){
         sortService.deleteSort(id);
         return "delete successful!";
