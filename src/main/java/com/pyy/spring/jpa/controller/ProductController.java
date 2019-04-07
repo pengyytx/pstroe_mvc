@@ -10,7 +10,6 @@ import java.util.List;
 public class ProductController {
     @Autowired
     ProductService productService;
-
     @RequestMapping(value = "/")
     public @ResponseBody String welcome(){
         return "welcome to pstore ^_^ ";
